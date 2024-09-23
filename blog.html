@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+
+    <!-- <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" /> -->
+    <!-- font awesome cdn -->
+    <script
+      src="https://kit.fontawesome.com/894511ecd0.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- manrope font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- tailwind and daisyUI link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              green: "#ABEF5F",
+              blck: "#212121",
+            },
+            fontFamily: {
+              Manrope: ["Manrope", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-Manrope container mx-auto">
+    <header class="sticky top-0 w-full shadow-md z-10">
+      <div class="navbar bg-base-100 font-extrabold bg-[#F9F7F3] lg:p-8">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            >
+              <li><a>Item 1</a></li>
+              <li>
+                <a>Parent</a>
+                <ul class="p-2">
+                  <li><a>Submenu 1</a></li>
+                  <li><a>Submenu 2</a></li>
+                </ul>
+              </li>
+              <li><a>Item 3</a></li>
+            </ul>
+          </div>
+          <button class="btn text-xl bg-[#B4F461]" id="home-btn">Home</button>
+        </div>
+        <div class="navbar-center hidden lg:flex lg:items-center lg:space-x-2">
+          <img src="./assets/logo.png" alt="" />
+          <span>Donate Bangladesh</span>
+        </div>
+        <div class="navbar-end">
+          <div class="flex items-center space-x-2">
+            <img src="./assets/coin.png" alt="" />
+            <span id="current-money">5500</span><span> BDT</span>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 lg:pt-20 flex justify-center space-x-2 bg-slate-100/[99]">
+        <a class="btn text-xl bg-[#B4F461]" id="donation-btn-nav">Donation</a>
+        <a class="btn text-xl" id="history-btn-nav">History</a>
+      </div>
+    </header>
+    <main>
+      <div class="collapse collapse-plus bg-base-200">
+        <input type="radio" name="my-accordion-3" checked="checked" />
+        <div class="collapse-title text-xl font-medium">
+          What is the Document Object Model (DOM)?
+        </div>
+        <div class="collapse-content">
+          <p>
+            The Document Object Model (DOM) in the context of HTML is a
+            programming interface that allows developers to interact with and
+            manipulate HTML and XML documents. The DOM represents the structure
+            of a webpage as a tree of objects, where each node is an object
+            representing a part of the document, such as elements, attributes,
+            or text.
+          </p>
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-base-200">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title text-xl font-medium">
+          How do you select an element from the DOM?
+        </div>
+        <div class="collapse-content">
+          <p>
+            In the DOM, you can select elements using several methods provided
+            by JavaScript. Here are the most common ways to select elements:
+            <br />
+            <span class="font-bold">1. document.getElementById()</span> Selects
+            an element by its id attribute. This method returns a single element
+            because id is supposed to be unique within a document. <br />
+            <span class="font-bold">2. document.getElementsByClassName()</span>
+            Selects all elements with a specific class. It returns an
+            HTMLCollection (an array-like object), and you can access individual
+            elements using indices. <br />
+            <span class="font-bold">3. document.getElementsByTagName()</span>
+            Selects all elements with a given tag name. Like
+            getElementsByClassName(), it returns an HTMLCollection. <br />
+            <span class="font-bold">4. document.querySelector()</span> Selects
+            the first element that matches a specified CSS selector. It’s very
+            flexible because you can use any valid CSS selector (like class, id,
+            or tag). <br />
+            <span class="font-bold">5. document.querySelectorAll()</span>
+            Selects all elements that match a specified CSS selector and returns
+            a NodeList (a static collection).
+          </p>
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-base-200">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title text-xl font-medium">
+          What is event delegation in the context of the DOM, and why is it
+          useful?
+        </div>
+        <div class="collapse-content">
+          <p>
+            Event delegation is a technique in the DOM that allows you to handle
+            events more efficiently by attaching a single event listener to a
+            parent element instead of adding listeners to individual child
+            elements. This parent element listens for events on its children by
+            taking advantage of event bubbling.
+          </p>
+          <ul class="space-y-4">
+            Why Event Delegation Is Useful:
+            <br />
+            <li>
+              <span class="font-bold">1. Improved Performance:</span> If you
+              have many child elements (e.g., hundreds of list items or
+              buttons), attaching individual event listeners to each one can be
+              inefficient and memory-consuming. Event delegation attaches only
+              one event listener to the parent, improving performance.
+            </li>
+            <li>
+              <span class="font-bold"
+                >2. Handles Dynamically Added Elements:</span
+              >
+              With event delegation, you don’t need to reattach event listeners
+              for new elements added to the DOM. Since the parent element
+              handles the event, it automatically works for dynamically created
+              child elements as well.
+            </li>
+            <li>
+              <span class="font-bold">3. Cleaner Code:</span> Instead of
+              attaching and managing multiple listeners, event delegation
+              centralizes event handling in one place, making the code easier to
+              manage and maintain.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-base-200">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title text-xl font-medium">
+          How do you manipulate an element's attributes and styles using the
+          DOM?
+        </div>
+        <div class="collapse-content">
+          <ul class="space-y-4">
+            <br />
+            <li>
+              <span class="font-bold">1. Manipulating Attributes:</span> To
+              retrieve the value of an attribute from an element, you use the
+              getAttribute() method. To set or update an attribute, use the
+              setAttribute() method.
+            </li>
+            <li>
+              <span class="font-bold">2. Manipulating Styles:</span>
+              You can directly manipulate an element's style by modifying the
+              style property. The style object allows you to access and change
+              any inline CSS styles. Adding or Removing CSS Classes Instead of
+              manually setting many styles, it's often better to manage styles
+              using CSS classes, which you can manipulate through the classList
+              property.
+            </li>
+            <li>
+              <span class="font-bold">3. Accessing Computed Styles:</span> If
+              you want to get the current style of an element (including styles
+              set via external CSS), you can use getComputedStyle().
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-[#F9F7F3] h-20 lg:h-40 w-full"></footer>
+
+    <script src="./js/blog.js"></script>
+  </body>
+</html>

@@ -5,6 +5,11 @@ const noakhaliDonation = document.getElementById("noakhali-donation");
 const feniDonation = document.getElementById("feni-donation");
 const quotaDonation = document.getElementById("quota-donation");
 
+document.getElementById("blog-btn").addEventListener("click", () => {
+  console.log("click");
+  location.href = "./blog.html";
+});
+
 function validate(str) {
   let flag = 0;
 
