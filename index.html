@@ -88,7 +88,7 @@
         <div class="navbar-end">
           <div class="flex items-center space-x-2">
             <img src="./assets/coin.png" alt="" />
-            <span>5500 BDT</span>
+            <span id="current-money">5500</span><span> BDT</span>
           </div>
         </div>
       </div>
@@ -118,7 +118,7 @@
               class="badge badge-ghost p-4 flex items-center space-x-2 rounded-lg"
             >
               <img src="./assets/coin.png" alt="" />
-              <span>0 BDT</span>
+              <span id="noakhali-total-donation">0</span><span> BDT</span>
             </div>
             <h2 class="card-title">Donate for Flood at Noakhali, Bangladesh</h2>
             <p>
@@ -133,8 +133,30 @@
               type=""
               placeholder="Write Donation Amount"
               class="input input-bordered w-full"
+              id="noakhali-input-amount"
             />
-            <button class="btn bg-[#B4F461] w-full">Donate Now</button>
+            <button class="btn bg-[#B4F461] w-full" id="noakhali-donation">
+              Donate Now
+            </button>
+            <!-- modal  -->
+            <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+              <div class="modal-box text-center space-y-4">
+                <h3 class="text-3xl font-bold">Congratulations!</h3>
+                <div class="flex justify-center">
+                  <img src="./assets/coin.png" alt="" class="h-[48px]" />
+                </div>
+                <p class="py-4">
+                  You Have Donated For Humankind<br />
+                  <span class="font-extrabold">Successfully</span>
+                </p>
+                <div class="modal-action justify-center">
+                  <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">close confirmation</button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
           </div>
         </div>
 
@@ -175,7 +197,9 @@
               placeholder="Write Donation Amount"
               class="input input-bordered w-full"
             />
-            <button class="btn bg-[#B4F461] w-full">Donate Now</button>
+            <button class="btn bg-[#B4F461] w-full" id="feni-donation">
+              Donate Now
+            </button>
           </div>
         </div>
 
@@ -215,23 +239,15 @@
               placeholder="Write Donation Amount"
               class="input input-bordered w-full"
             />
-            <button class="btn bg-[#B4F461] w-full">Donate Now</button>
+            <button class="btn bg-[#B4F461] w-full" id="quota-donation">
+              Donate Now
+            </button>
           </div>
         </div>
       </div>
 
       <!-- history section  -->
-      <div id="history-section" class="hidden">
-        <div class="p-4 border-2 rounded-lg">
-          <h2 class="mb-4">
-            96500 Taka is Donated for famine-2024 at Feni, Bangladesh
-          </h2>
-          <span id="date-time"
-            >Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard
-            Time)</span
-          >
-        </div>
-      </div>
+      <div id="history-section" class="hidden space-y-4"></div>
     </main>
     <footer></footer>
     <script src="./js/index.js"></script>
