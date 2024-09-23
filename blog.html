@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Document</title>
-
+    <title>Donate Bangladesh Blog Page</title>
+    <link rel="shortcut icon" href="./assets/coin.png" type="image/x-icon" />
     <!-- <link rel="stylesheet" href="./style.css" />
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" /> -->
     <!-- font awesome cdn -->
@@ -45,46 +45,14 @@
     </script>
   </head>
   <body class="font-Manrope container mx-auto">
-    <header class="sticky top-0 w-full shadow-md z-10">
+    <header class="sticky top-0 w-full shadow-md z-10 backdrop-blur-lg mb-8">
       <div class="navbar bg-base-100 font-extrabold bg-[#F9F7F3] lg:p-8">
         <div class="navbar-start">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-            >
-              <li><a>Item 1</a></li>
-              <li>
-                <a>Parent</a>
-                <ul class="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </li>
-              <li><a>Item 3</a></li>
-            </ul>
-          </div>
           <button class="btn text-xl bg-[#B4F461]" id="home-btn">Home</button>
         </div>
-        <div class="navbar-center hidden lg:flex lg:items-center lg:space-x-2">
+        <div class="navbar-center lg:flex lg:items-center lg:space-x-2">
           <img src="./assets/logo.png" alt="" />
-          <span>Donate Bangladesh</span>
+          <span class="hidden lg:inline-block">Donate Bangladesh</span>
         </div>
         <div class="navbar-end">
           <div class="flex items-center space-x-2">
@@ -93,19 +61,16 @@
           </div>
         </div>
       </div>
-      <div class="p-4 lg:pt-20 flex justify-center space-x-2 bg-slate-100/[99]">
-        <a class="btn text-xl bg-[#B4F461]" id="donation-btn-nav">Donation</a>
-        <a class="btn text-xl" id="history-btn-nav">History</a>
-      </div>
     </header>
-    <main>
+    <main class="my-4 lg:my-8 w-11/12 mx-auto space-y-4 lg:space-y-6">
+      <h1 class="text-3xl font-extrabold text-center">Important FAQ</h1>
       <div class="collapse collapse-plus bg-base-200">
         <input type="radio" name="my-accordion-3" checked="checked" />
-        <div class="collapse-title text-xl font-medium">
+        <div class="collapse-title text-xl lg:text-2xl font-medium">
           What is the Document Object Model (DOM)?
         </div>
         <div class="collapse-content">
-          <p>
+          <p class="text-sm lg:text-base">
             The Document Object Model (DOM) in the context of HTML is a
             programming interface that allows developers to interact with and
             manipulate HTML and XML documents. The DOM represents the structure
@@ -117,11 +82,11 @@
       </div>
       <div class="collapse collapse-plus bg-base-200">
         <input type="radio" name="my-accordion-3" />
-        <div class="collapse-title text-xl font-medium">
+        <div class="collapse-title text-xl lg:text-2xl font-medium">
           How do you select an element from the DOM?
         </div>
         <div class="collapse-content">
-          <p>
+          <p class="text-sm lg:text-base">
             In the DOM, you can select elements using several methods provided
             by JavaScript. Here are the most common ways to select elements:
             <br />
@@ -147,19 +112,19 @@
       </div>
       <div class="collapse collapse-plus bg-base-200">
         <input type="radio" name="my-accordion-3" />
-        <div class="collapse-title text-xl font-medium">
+        <div class="collapse-title text-xl lg:text-2xl font-medium">
           What is event delegation in the context of the DOM, and why is it
           useful?
         </div>
         <div class="collapse-content">
-          <p>
+          <p class="text-sm lg:text-base">
             Event delegation is a technique in the DOM that allows you to handle
             events more efficiently by attaching a single event listener to a
             parent element instead of adding listeners to individual child
             elements. This parent element listens for events on its children by
             taking advantage of event bubbling.
           </p>
-          <ul class="space-y-4">
+          <ul class="space-y-4 text-sm lg:text-base">
             Why Event Delegation Is Useful:
             <br />
             <li>
@@ -189,12 +154,12 @@
       </div>
       <div class="collapse collapse-plus bg-base-200">
         <input type="radio" name="my-accordion-3" />
-        <div class="collapse-title text-xl font-medium">
+        <div class="collapse-title text-xl lg:text-2xl font-medium">
           How do you manipulate an element's attributes and styles using the
           DOM?
         </div>
         <div class="collapse-content">
-          <ul class="space-y-4">
+          <ul class="space-y-4 text-sm lg:text-base">
             <br />
             <li>
               <span class="font-bold">1. Manipulating Attributes:</span> To

@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Document</title>
+    <title>Donate Bangladesh Home Page</title>
+    <link rel="shortcut icon" href="./assets/coin.png" type="image/x-icon" />
     <!-- <link rel="stylesheet" href="./style.css" />
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" /> -->
     <!-- font awesome cdn -->
@@ -47,43 +48,11 @@
     <header class="sticky top-0 w-full shadow-md z-10">
       <div class="navbar bg-base-100 font-extrabold bg-[#F9F7F3] lg:p-8">
         <div class="navbar-start">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-            >
-              <li><a>Item 1</a></li>
-              <li>
-                <a>Parent</a>
-                <ul class="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </li>
-              <li><a>Item 3</a></li>
-            </ul>
-          </div>
           <button class="btn text-xl bg-[#B4F461]" id="blog-btn">Blog</button>
         </div>
-        <div class="navbar-center hidden lg:flex lg:items-center lg:space-x-2">
+        <div class="navbar-center lg:flex lg:items-center lg:space-x-2">
           <img src="./assets/logo.png" alt="" />
-          <span>Donate Bangladesh</span>
+          <span class="hidden lg:inline-block">Donate Bangladesh</span>
         </div>
         <div class="navbar-end">
           <div class="flex items-center space-x-2">
@@ -92,13 +61,15 @@
           </div>
         </div>
       </div>
-      <div class="p-4 lg:pt-20 flex justify-center space-x-2 bg-slate-100/[99]">
+      <div
+        class="p-8 lg:pt-20 flex justify-center space-x-4 z-10 backdrop-blur-xl"
+      >
         <a class="btn text-xl bg-[#B4F461]" id="donation-btn-nav">Donation</a>
         <a class="btn text-xl" id="history-btn-nav">History</a>
       </div>
     </header>
     <main
-      class="w-10/12 mx-auto mt-4 lg:mt-6 space-y-2 lg:space-y-4 mb-4 lg:mb-16"
+      class="w-[95%] lg:w-10/12 mx-auto mt-6 lg:mt-8 space-y-2 lg:space-y-4 mb-4 lg:mb-16"
     >
       <!-- donation card section  -->
 
@@ -120,10 +91,13 @@
               class="badge badge-ghost p-4 flex items-center space-x-2 rounded-lg"
             >
               <img src="./assets/coin.png" alt="" />
-              <span id="noakhali-total-donation">0</span><span> BDT</span>
+              <span id="noakhali-total-donation" class="font-bold">0</span
+              ><span class="font-bold"> BDT</span>
             </div>
-            <h2 class="card-title">Donate for Flood at Noakhali, Bangladesh</h2>
-            <p>
+            <h2 class="card-title lg:text-2xl">
+              Donate for Flood at Noakhali, Bangladesh
+            </h2>
+            <p class="lg:text-xl">
               The recent floods in Noakhali have caused significant damage to
               homes infrastructure. Your donation will help provide essential
               supplies and to those affected by this disaster. Every
@@ -137,7 +111,10 @@
               class="input input-bordered w-full"
               id="noakhali-input-amount"
             />
-            <button class="btn bg-[#B4F461] w-full" id="noakhali-donation">
+            <button
+              class="btn bg-[#B4F461] w-full lg:text-lg"
+              id="noakhali-donation"
+            >
               Donate Now
             </button>
             <!-- modal  -->
@@ -179,12 +156,13 @@
               class="badge badge-ghost p-4 flex items-center space-x-2 rounded-lg"
             >
               <img src="./assets/coin.png" alt="" />
-              <span id="feni-total-donation">0</span><span> BDT</span>
+              <span id="feni-total-donation" class="font-bold">0</span
+              ><span class="font-bold"> BDT</span>
             </div>
-            <h2 class="card-title">
+            <h2 class="card-title lg:text-2xl">
               Donate for Flood Relief in Feni,Bangladesh
             </h2>
-            <p>
+            <p class="lg:text-xl">
               The recent floods in Feni have devastated local communities,
               leading to severe disruption and loss. Your generous donation will
               help provide immediate aid, including food, clean water, and
@@ -200,7 +178,10 @@
               class="input input-bordered w-full"
               id="feni-input-amount"
             />
-            <button class="btn bg-[#B4F461] w-full" id="feni-donation">
+            <button
+              class="btn bg-[#B4F461] w-full lg:text-lg"
+              id="feni-donation"
+            >
               Donate Now
             </button>
           </div>
@@ -223,10 +204,13 @@
               class="badge badge-ghost p-4 flex items-center space-x-2 rounded-lg"
             >
               <img src="./assets/coin.png" alt="" />
-              <span id="quota-total-donation">0</span><span> BDT</span>
+              <span id="quota-total-donation" class="font-bold">0</span
+              ><span class="font-bold"> BDT</span>
             </div>
-            <h2 class="card-title">Aid for Injured in the Quota Movement</h2>
-            <p>
+            <h2 class="card-title lg:text-2xl">
+              Aid for Injured in the Quota Movement
+            </h2>
+            <p class="lg:text-xl">
               The recent Quota movement has resulted in numerous injuries and
               significant hardship for many individuals. Your support is crucial
               in providing medical assistance, rehabilitation, and necessary
@@ -243,7 +227,10 @@
               class="input input-bordered w-full"
               id="quota-input-amount"
             />
-            <button class="btn bg-[#B4F461] w-full" id="quota-donation">
+            <button
+              class="btn bg-[#B4F461] w-full lg:text-lg"
+              id="quota-donation"
+            >
               Donate Now
             </button>
           </div>
@@ -251,7 +238,14 @@
       </div>
 
       <!-- history section  -->
-      <div id="history-section" class="hidden space-y-4"></div>
+      <div id="history-section" class="hidden space-y-4">
+        <h2
+          class="text-xl lg:text-3xl font-extrabold text-center"
+          id="no-donation"
+        >
+          You haven't made any donations yet. Please help the needy!
+        </h2>
+      </div>
     </main>
     <footer class="bg-[#F9F7F3] h-20 lg:h-40 w-full"></footer>
     <script src="./js/index.js"></script>

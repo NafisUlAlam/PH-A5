@@ -5,11 +5,35 @@ const noakhaliDonation = document.getElementById("noakhali-donation");
 const feniDonation = document.getElementById("feni-donation");
 const quotaDonation = document.getElementById("quota-donation");
 
+function adjustHistoryPage() {
+  const headerHeight =
+    document.querySelector("header").offsetHeight +
+    parseInt(getComputedStyle(document.querySelector("header")).marginTop) +
+    parseInt(getComputedStyle(document.querySelector("header")).marginBottom);
+
+  const footerHeight =
+    document.querySelector("footer").offsetHeight +
+    parseInt(getComputedStyle(document.querySelector("footer")).marginTop) +
+    parseInt(getComputedStyle(document.querySelector("footer")).marginBottom);
+
+  const mainHeight =
+    parseInt(getComputedStyle(document.querySelector("main")).marginTop) +
+    parseInt(getComputedStyle(document.querySelector("main")).marginBottom);
+
+  const viewportHeight = window.innerHeight;
+
+  const contentHeight =
+    viewportHeight - headerHeight - footerHeight - mainHeight;
+
+  historySection.style.minHeight = `${contentHeight}px`;
+}
+
 document.getElementById("blog-btn").addEventListener("click", () => {
   console.log("click");
   location.href = "./blog.html";
 });
 
+//validating all the inputs, only accepts numbers and floats.
 function validate(str) {
   let flag = 0;
 
@@ -23,18 +47,20 @@ function validate(str) {
   return flag <= 1 ? true : false;
 }
 
+//creating a node for history item and returning it
+
 function createHistory(inputAmountNumber, date, id) {
+  document.getElementById("no-donation").classList.add("hidden");
+
+  const title = document.getElementsByClassName("card-title")[id - 1].innerText;
+
   const div = document.createElement("div");
   div.classList.add("p-4", "border-2", "rounded-lg");
 
   const h2 = document.createElement("h2");
   h2.classList.add("mb-4", "font-extrabold", "text-xl");
-  if (id === 1)
-    h2.innerText = `${inputAmountNumber} Taka is Donated for flood at Noakhali, Bangladesh`;
-  else if (id === 2)
-    h2.innerText = `${inputAmountNumber} Taka is Donated for flood at Feni, Bangladesh`;
-  else
-    h2.innerText = `${inputAmountNumber} Taka is Donated for injured students during quota movement`;
+  h2.innerText = `${inputAmountNumber} Taka is Donated to "${title}".`;
+
   const span = document.createElement("span");
   span.classList.add("text-sm");
   span.innerText = `Date : ${date}`;
@@ -56,6 +82,7 @@ document.getElementById("history-btn-nav").addEventListener("click", () => {
   document.getElementById("donation-btn-nav").classList.remove("bg-[#B4F461]");
   donationSection.classList.add("hidden");
   historySection.classList.remove("hidden");
+  adjustHistoryPage();
 });
 
 noakhaliDonation.addEventListener("click", () => {
@@ -73,7 +100,7 @@ noakhaliDonation.addEventListener("click", () => {
   let inputAmountNumber = Number(inputAmount);
   let currentMoneyNumber = Number(currentMoney);
 
-  if (inputAmountNumber === 0) {
+  if (inputAmountNumber === 0.0) {
     alert("Donate some positive amount please");
     document.getElementById("noakhali-input-amount").value = "";
     return;
