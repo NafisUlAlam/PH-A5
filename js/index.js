@@ -18,6 +18,27 @@ function validate(str) {
   return flag <= 1 ? true : false;
 }
 
+function createHistory(inputAmountNumber, date, id) {
+  const div = document.createElement("div");
+  div.classList.add("p-4", "border-2", "rounded-lg");
+
+  const h2 = document.createElement("h2");
+  h2.classList.add("mb-4", "font-extrabold", "text-xl");
+  if (id === 1)
+    h2.innerText = `${inputAmountNumber} Taka is Donated for flood at Noakhali, Bangladesh`;
+  else if (id === 2)
+    h2.innerText = `${inputAmountNumber} Taka is Donated for flood at Feni, Bangladesh`;
+  else
+    h2.innerText = `${inputAmountNumber} Taka is Donated for injured students during quota movement`;
+  const span = document.createElement("span");
+  span.classList.add("text-sm");
+  span.innerText = `Date : ${date}`;
+
+  div.appendChild(h2);
+  div.appendChild(span);
+  return div;
+}
+
 document.getElementById("donation-btn-nav").addEventListener("click", () => {
   document.getElementById("donation-btn-nav").classList.add("bg-[#B4F461]");
   document.getElementById("history-btn-nav").classList.remove("bg-[#B4F461]");
@@ -68,12 +89,155 @@ noakhaliDonation.addEventListener("click", () => {
 
   document.getElementById("my_modal_5").showModal();
   const date = new Date();
-  historySection.innerHTML += `
-        <div class="p-4 border-2 rounded-lg">
-          <h2 class="mb-4 font-extrabold text-xl">
-            ${inputAmountNumber} Taka is Donated for flood at Noakhali, Bangladesh
-          </h2>
-          <span class="text-sm">Date : ${date}</span>
-        </div>
-        `;
+  //   historySection.innerHTML += `
+  //         <div class="p-4 border-2 rounded-lg">
+  //           <h2 class="mb-4 font-extrabold text-xl">
+  //             ${inputAmountNumber} Taka is Donated for flood at Noakhali, Bangladesh
+  //           </h2>
+  //           <span class="text-sm">Date : ${date}</span>
+  //         </div>
+  //         `;
+  //   const div = document.createElement("div");
+  //   div.classList.add("p-4", "border-2", "rounded-lg");
+
+  //   const h2 = document.createElement("h2");
+  //   h2.classList.add("mb-4", "font-extrabold", "text-xl");
+  //   h2.innerText = `${inputAmountNumber} Taka is Donated for flood at Noakhali, Bangladesh`;
+
+  //   const span = document.createElement("span");
+  //   span.classList.add("text-sm");
+  //   span.innerText = `Date : ${date}`;
+
+  //   div.appendChild(h2);
+  //   div.appendChild(span);
+  historySection.insertBefore(
+    createHistory(inputAmountNumber, date, 1),
+    historySection.firstElementChild
+  );
+});
+
+feniDonation.addEventListener("click", () => {
+  let inputAmount = document.getElementById("feni-input-amount").value;
+  let currentMoney = document.getElementById("current-money").innerText;
+  let feniTotalDonationNumber = Number(
+    document.getElementById("feni-total-donation").innerText
+  );
+
+  if (!validate(inputAmount)) {
+    alert("please input a valid amount");
+    document.getElementById("feni-input-amount").value = "";
+    return;
+  }
+  let inputAmountNumber = Number(inputAmount);
+  let currentMoneyNumber = Number(currentMoney);
+
+  if (inputAmountNumber === 0) {
+    alert("Donate some positive amount please");
+    document.getElementById("feni-input-amount").value = "";
+    return;
+  }
+
+  if (inputAmountNumber > currentMoneyNumber) {
+    alert("You don't have sufficient balance");
+    document.getElementById("feni-input-amount").value = "";
+    return;
+  }
+  currentMoneyNumber -= inputAmountNumber;
+  feniTotalDonationNumber += inputAmountNumber;
+  document.getElementById("current-money").innerText = currentMoneyNumber;
+  document.getElementById("feni-total-donation").innerText =
+    feniTotalDonationNumber;
+
+  document.getElementById("feni-input-amount").value = "";
+
+  document.getElementById("my_modal_5").showModal();
+  const date = new Date();
+  //   historySection.innerHTML += `
+  //         <div class="p-4 border-2 rounded-lg">
+  //           <h2 class="mb-4 font-extrabold text-xl">
+  //             ${inputAmountNumber} Taka is Donated for flood at Noakhali, Bangladesh
+  //           </h2>
+  //           <span class="text-sm">Date : ${date}</span>
+  //         </div>
+  //         `;
+  //   const div = document.createElement("div");
+  //   div.classList.add("p-4", "border-2", "rounded-lg");
+
+  //   const h2 = document.createElement("h2");
+  //   h2.classList.add("mb-4", "font-extrabold", "text-xl");
+  //   h2.innerText = `${inputAmountNumber} Taka is Donated for flood at Noakhali, Bangladesh`;
+
+  //   const span = document.createElement("span");
+  //   span.classList.add("text-sm");
+  //   span.innerText = `Date : ${date}`;
+
+  //   div.appendChild(h2);
+  //   div.appendChild(span);
+  historySection.insertBefore(
+    createHistory(inputAmountNumber, date, 2),
+    historySection.firstElementChild
+  );
+});
+
+quotaDonation.addEventListener("click", () => {
+  let inputAmount = document.getElementById("quota-input-amount").value;
+  let currentMoney = document.getElementById("current-money").innerText;
+  let quotaTotalDonationNumber = Number(
+    document.getElementById("quota-total-donation").innerText
+  );
+
+  if (!validate(inputAmount)) {
+    alert("please input a valid amount");
+    document.getElementById("quota-input-amount").value = "";
+    return;
+  }
+  let inputAmountNumber = Number(inputAmount);
+  let currentMoneyNumber = Number(currentMoney);
+
+  if (inputAmountNumber === 0) {
+    alert("Donate some positive amount please");
+    document.getElementById("quota-input-amount").value = "";
+    return;
+  }
+
+  if (inputAmountNumber > currentMoneyNumber) {
+    alert("You don't have sufficient balance");
+    document.getElementById("quota-input-amount").value = "";
+    return;
+  }
+  currentMoneyNumber -= inputAmountNumber;
+  quotaTotalDonationNumber += inputAmountNumber;
+  document.getElementById("current-money").innerText = currentMoneyNumber;
+  document.getElementById("quota-total-donation").innerText =
+    quotaTotalDonationNumber;
+
+  document.getElementById("quota-input-amount").value = "";
+
+  document.getElementById("my_modal_5").showModal();
+  const date = new Date();
+  //   historySection.innerHTML += `
+  //         <div class="p-4 border-2 rounded-lg">
+  //           <h2 class="mb-4 font-extrabold text-xl">
+  //             ${inputAmountNumber} Taka is Donated for flood at Noakhali, Bangladesh
+  //           </h2>
+  //           <span class="text-sm">Date : ${date}</span>
+  //         </div>
+  //         `;
+  //   const div = document.createElement("div");
+  //   div.classList.add("p-4", "border-2", "rounded-lg");
+
+  //   const h2 = document.createElement("h2");
+  //   h2.classList.add("mb-4", "font-extrabold", "text-xl");
+  //   h2.innerText = `${inputAmountNumber} Taka is Donated for flood at Noakhali, Bangladesh`;
+
+  //   const span = document.createElement("span");
+  //   span.classList.add("text-sm");
+  //   span.innerText = `Date : ${date}`;
+
+  //   div.appendChild(h2);
+  //   div.appendChild(span);
+  historySection.insertBefore(
+    createHistory(inputAmountNumber, date, 3),
+    historySection.firstElementChild
+  );
 });

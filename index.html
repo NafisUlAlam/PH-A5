@@ -97,7 +97,9 @@
         <a class="btn text-xl" id="history-btn-nav">History</a>
       </div>
     </header>
-    <main class="w-10/12 mx-auto mt-4 lg:mt-6 space-y-2 lg:space-y-4">
+    <main
+      class="w-10/12 mx-auto mt-4 lg:mt-6 space-y-2 lg:space-y-4 mb-4 lg:mb-16"
+    >
       <!-- donation card section  -->
 
       <div class="space-y-4 lg:space-y-10" id="donation-section">
@@ -177,7 +179,7 @@
               class="badge badge-ghost p-4 flex items-center space-x-2 rounded-lg"
             >
               <img src="./assets/coin.png" alt="" />
-              <span>0 BDT</span>
+              <span id="feni-total-donation">0</span><span> BDT</span>
             </div>
             <h2 class="card-title">
               Donate for Flood Relief in Feni,Bangladesh
@@ -196,6 +198,7 @@
               type=""
               placeholder="Write Donation Amount"
               class="input input-bordered w-full"
+              id="feni-input-amount"
             />
             <button class="btn bg-[#B4F461] w-full" id="feni-donation">
               Donate Now
@@ -209,7 +212,7 @@
           <div class="lg:w-1/2 lg:flex">
             <img
               src="./assets/quota-protest.png"
-              alt="Feni"
+              alt="quto-protest"
               class="w-full items-stretch object-cover rounded-xl"
             />
           </div>
@@ -220,7 +223,7 @@
               class="badge badge-ghost p-4 flex items-center space-x-2 rounded-lg"
             >
               <img src="./assets/coin.png" alt="" />
-              <span>0 BDT</span>
+              <span id="quota-total-donation">0</span><span> BDT</span>
             </div>
             <h2 class="card-title">Aid for Injured in the Quota Movement</h2>
             <p>
@@ -238,6 +241,7 @@
               type=""
               placeholder="Write Donation Amount"
               class="input input-bordered w-full"
+              id="quota-input-amount"
             />
             <button class="btn bg-[#B4F461] w-full" id="quota-donation">
               Donate Now
@@ -249,7 +253,7 @@
       <!-- history section  -->
       <div id="history-section" class="hidden space-y-4"></div>
     </main>
-    <footer></footer>
+    <footer class="bg-[#F9F7F3] h-20 lg:h-40 w-full"></footer>
     <script src="./js/index.js"></script>
   </body>
 </html>
