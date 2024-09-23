@@ -93,14 +93,14 @@
         </div>
       </div>
       <div class="p-4 lg:pt-20 flex justify-center space-x-2 bg-slate-100/[99]">
-        <a class="btn text-xl bg-[#B4F461]">Donation</a>
-        <a class="btn text-xl">History</a>
+        <a class="btn text-xl bg-[#B4F461]" id="donation-btn-nav">Donation</a>
+        <a class="btn text-xl" id="history-btn-nav">History</a>
       </div>
     </header>
     <main class="w-10/12 mx-auto mt-4 lg:mt-6 space-y-2 lg:space-y-4">
       <!-- donation card section  -->
 
-      <div class="space-y-4 lg:space-y-10">
+      <div class="space-y-4 lg:space-y-10" id="donation-section">
         <div
           class="card lg:flex lg:flex-row bg-base-100 shadow-xl border-2 p-4 lg:space-y-0 space-y-4 lg:space-x-6"
         >
@@ -219,7 +219,21 @@
           </div>
         </div>
       </div>
+
+      <!-- history section  -->
+      <div id="history-section" class="hidden">
+        <div class="p-4 border-2 rounded-lg">
+          <h2 class="mb-4">
+            96500 Taka is Donated for famine-2024 at Feni, Bangladesh
+          </h2>
+          <span id="date-time"
+            >Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard
+            Time)</span
+          >
+        </div>
+      </div>
     </main>
     <footer></footer>
+    <script src="./js/index.js"></script>
   </body>
 </html>
