@@ -73,7 +73,13 @@
           <p class="text-sm lg:text-base">
             DOM means Document Object Model. It is used as a bridge to connect
             html and javascript. Using DOM, we can utilize javascript functions
-            to target an element inside html.
+            to target an element inside html. DOM converts the html file into a
+            tree structure. Each element of the elements are called nodes in
+            terms of DOM. Using javascript we can target those nodes and
+            dynamically manipulate them. We can change the way they behave,
+            increase or decrease their height/width or any other styles and css.
+            We can add classes, id, insert new elements or even delete nodes
+            from the html file.
           </p>
         </div>
       </div>
@@ -88,22 +94,20 @@
             JavaScript. Here are the most common ways to select elements:
             <br />
             <span class="font-bold">1. document.getElementById()</span> Selects
-            an element by its id attribute. This method returns a single element
-            because id is supposed to be unique within a document. <br />
+            an element by its id attribute. This method returns a single
+            element. <br />
             <span class="font-bold">2. document.getElementsByClassName()</span>
-            Selects all elements with a specific class. It returns an
-            HTMLCollection (an array-like object), and we can access individual
-            elements using indices. <br />
+            It returns an HTMLCollection (an array-like object), and we can
+            access individual elements using indices. <br />
             <span class="font-bold">3. document.getElementsByTagName()</span>
             Selects all elements with a given tag name. Like
             getElementsByClassName(), it returns an HTMLCollection. <br />
-            <span class="font-bold">4. document.querySelector()</span> Selects
-            the first element that matches a specified CSS selector. It’s very
-            flexible because we can use any valid CSS selector (like class, id,
-            or tag). <br />
+            <span class="font-bold">4. document.querySelector()</span> It is
+            very useful to specifically target an element using css selectors.
+            We don't need any id, or class to do this task. <br />
             <span class="font-bold">5. document.querySelectorAll()</span>
             Selects all elements that match a specified CSS selector and returns
-            a NodeList (a static collection).
+            a NodeList. We can use forEach method inside a nodelist.
           </p>
         </div>
       </div>
@@ -115,12 +119,12 @@
         </div>
         <div class="collapse-content">
           <p class="text-sm lg:text-base">
-            Event delegation is a technique in the DOM that allows us to handle
-            events more efficiently by attaching a single event listener to a
-            parent element instead of adding listeners to individual child
-            elements. This parent element listens for events on its children by
-            taking advantage of event bubbling. We can move within the parent
-            and its children using event target and parentElement.
+            Event delegation is a technique where the parent element does the
+            work which its children are supposed to do. For example, if a
+            container has multiple buttons, then instead of attaching
+            eventListener to all of the buttons, we can add only a single
+            listener for the parent, we can use event parameter to look at the
+            target element and still do the work intended for the buttons.
           </p>
           <ul class="space-y-4 text-sm lg:text-base">
             Why Event Delegation Is Useful:
@@ -137,15 +141,12 @@
                 >2. Handles Dynamically Added Elements:</span
               >
               With event delegation, we don’t need to reattach event listeners
-              for new elements added to the DOM. Since the parent element
-              handles the event, it automatically works for dynamically created
-              child elements as well.
+              for new elements added to the DOM. Parent element will do the work
+              even if we dynamically add new children inside the parent.
             </li>
             <li>
-              <span class="font-bold">3. Cleaner Code:</span> Instead of
-              attaching and managing multiple listeners, event delegation
-              centralizes event handling in one place, making the code easier to
-              manage and maintain.
+              <span class="font-bold">3. Cleaner Code:</span> Even delegation
+              helps us maintain and organize our code in a better way.
             </li>
           </ul>
         </div>
@@ -160,10 +161,9 @@
           <ul class="space-y-4 text-sm lg:text-base">
             <br />
             <li>
-              <span class="font-bold">1. Manipulating Attributes:</span> To
-              retrieve the value of an attribute from an element, we can use the
-              getAttribute() method. To set or update an attribute, we can use
-              the setAttribute() method.
+              <span class="font-bold">1. Manipulating Attributes:</span>We can
+              use getAttribute() method to get the attributes and to set or
+              update an attribute, we can use the setAttribute() method.
             </li>
             <li>
               <span class="font-bold">2. Manipulating Styles:</span>
@@ -173,9 +173,14 @@
               the text color of the div with id container to white.
             </li>
             <li>
-              <span class="font-bold">3. Accessing Computed Styles:</span> If we
-              want to get the current style of an element (including styles set
-              via external CSS), we can use getComputedStyle().
+              <span class="font-bold">3. Computed Styles:</span> If we want to
+              get the current style of an element, we can use
+              getComputedStyle().
+            </li>
+            <li>
+              <span class="font-bold">4. Style Object:</span> We can target an
+              element and use style object and its properties to dynamically
+              change an element's design using JS.
             </li>
           </ul>
         </div>
