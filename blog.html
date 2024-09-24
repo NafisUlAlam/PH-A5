@@ -71,12 +71,9 @@
         </div>
         <div class="collapse-content">
           <p class="text-sm lg:text-base">
-            The Document Object Model (DOM) in the context of HTML is a
-            programming interface that allows developers to interact with and
-            manipulate HTML and XML documents. The DOM represents the structure
-            of a webpage as a tree of objects, where each node is an object
-            representing a part of the document, such as elements, attributes,
-            or text.
+            DOM means Document Object Model. It is used as a bridge to connect
+            html and javascript. Using DOM, we can utilize javascript functions
+            to target an element inside html.
           </p>
         </div>
       </div>
@@ -87,22 +84,22 @@
         </div>
         <div class="collapse-content">
           <p class="text-sm lg:text-base">
-            In the DOM, you can select elements using several methods provided
-            by JavaScript. Here are the most common ways to select elements:
+            In the DOM, we can select elements using several methods provided by
+            JavaScript. Here are the most common ways to select elements:
             <br />
             <span class="font-bold">1. document.getElementById()</span> Selects
             an element by its id attribute. This method returns a single element
             because id is supposed to be unique within a document. <br />
             <span class="font-bold">2. document.getElementsByClassName()</span>
             Selects all elements with a specific class. It returns an
-            HTMLCollection (an array-like object), and you can access individual
+            HTMLCollection (an array-like object), and we can access individual
             elements using indices. <br />
             <span class="font-bold">3. document.getElementsByTagName()</span>
             Selects all elements with a given tag name. Like
             getElementsByClassName(), it returns an HTMLCollection. <br />
             <span class="font-bold">4. document.querySelector()</span> Selects
             the first element that matches a specified CSS selector. It’s very
-            flexible because you can use any valid CSS selector (like class, id,
+            flexible because we can use any valid CSS selector (like class, id,
             or tag). <br />
             <span class="font-bold">5. document.querySelectorAll()</span>
             Selects all elements that match a specified CSS selector and returns
@@ -118,19 +115,20 @@
         </div>
         <div class="collapse-content">
           <p class="text-sm lg:text-base">
-            Event delegation is a technique in the DOM that allows you to handle
+            Event delegation is a technique in the DOM that allows us to handle
             events more efficiently by attaching a single event listener to a
             parent element instead of adding listeners to individual child
             elements. This parent element listens for events on its children by
-            taking advantage of event bubbling.
+            taking advantage of event bubbling. We can move within the parent
+            and its children using event target and parentElement.
           </p>
           <ul class="space-y-4 text-sm lg:text-base">
             Why Event Delegation Is Useful:
             <br />
             <li>
-              <span class="font-bold">1. Improved Performance:</span> If you
-              have many child elements (e.g., hundreds of list items or
-              buttons), attaching individual event listeners to each one can be
+              <span class="font-bold">1. Improved Performance:</span> If we have
+              many child elements (e.g., hundreds of list items or buttons),
+              attaching individual event listeners to each one can be
               inefficient and memory-consuming. Event delegation attaches only
               one event listener to the parent, improving performance.
             </li>
@@ -138,7 +136,7 @@
               <span class="font-bold"
                 >2. Handles Dynamically Added Elements:</span
               >
-              With event delegation, you don’t need to reattach event listeners
+              With event delegation, we don’t need to reattach event listeners
               for new elements added to the DOM. Since the parent element
               handles the event, it automatically works for dynamically created
               child elements as well.
@@ -163,23 +161,21 @@
             <br />
             <li>
               <span class="font-bold">1. Manipulating Attributes:</span> To
-              retrieve the value of an attribute from an element, you use the
-              getAttribute() method. To set or update an attribute, use the
-              setAttribute() method.
+              retrieve the value of an attribute from an element, we can use the
+              getAttribute() method. To set or update an attribute, we can use
+              the setAttribute() method.
             </li>
             <li>
               <span class="font-bold">2. Manipulating Styles:</span>
-              You can directly manipulate an element's style by modifying the
-              style property. The style object allows you to access and change
-              any inline CSS styles. Adding or Removing CSS Classes Instead of
-              manually setting many styles, it's often better to manage styles
-              using CSS classes, which you can manipulate through the classList
-              property.
+              We can directly manipulate an element's style by modifying the
+              style property. For example,
+              document.getElementById("container").style.color ="white" will set
+              the text color of the div with id container to white.
             </li>
             <li>
-              <span class="font-bold">3. Accessing Computed Styles:</span> If
-              you want to get the current style of an element (including styles
-              set via external CSS), you can use getComputedStyle().
+              <span class="font-bold">3. Accessing Computed Styles:</span> If we
+              want to get the current style of an element (including styles set
+              via external CSS), we can use getComputedStyle().
             </li>
           </ul>
         </div>
